@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-ARG KUBERNETES_VERSION=v1.20.15
+ARG KUBERNETES_VERSION=v1.21.11
 
 ENV DEBIAN_FRONTEND=noninteractive \
     container=docker \
