@@ -1,6 +1,6 @@
-FROM debian:stretch
+FROM debian:bookworm
 
-ARG KUBERNETES_VERSION=v1.22.10
+ARG KUBERNETES_VERSION=v1.23.17
 
 ENV DEBIAN_FRONTEND=noninteractive \
     container=docker \
