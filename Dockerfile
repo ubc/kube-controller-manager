@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-ARG KUBERNETES_VERSION=v1.23.17
+ARG KUBERNETES_VERSION=v1.24.17
 
 ENV DEBIAN_FRONTEND=noninteractive \
     container=docker \
