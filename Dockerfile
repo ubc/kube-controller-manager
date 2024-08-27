@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM debian:bullseye
 
 ARG KUBERNETES_VERSION=v1.29.7
 
@@ -9,11 +9,11 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN set -x \
     && apt-get update \
-    && apt-get install -q -yy curl gnupg2 \
-    && curl https://raw.githubusercontent.com/ceph/ceph/master/keys/release.asc | apt-key add - \
-    && echo deb http://download.ceph.com/debian-jewel/ stretch main | tee /etc/apt/sources.list.d/ceph.list \
-    && apt-get update -y \
-    && apt-get install -q -yy ceph-common \
+    && apt-get install -q -yy curl gnupg2 ceph-common \
+#&& curl https://raw.githubusercontent.com/ceph/ceph/master/keys/release.asc | apt-key add - \
+#    && echo deb http://download.ceph.com/debian-pacific/ bullseye main | tee /etc/apt/sources.list.d/ceph.list \
+#    && apt-get update -y \
+#    && apt-get install -q -yy ceph-common \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && curl -L ${KUBERNETES_DOWNLOAD_ROOT}/${KUBERNETES_COMPONENT} -o /usr/bin/${KUBERNETES_COMPONENT} \
     && chmod +x /usr/bin/${KUBERNETES_COMPONENT} \
