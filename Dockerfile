@@ -1,6 +1,6 @@
 FROM debian:bullseye
 
-ARG KUBERNETES_VERSION=v1.29.7
+ARG KUBERNETES_VERSION=v1.27.16
 
 ENV DEBIAN_FRONTEND=noninteractive \
     container=docker \
